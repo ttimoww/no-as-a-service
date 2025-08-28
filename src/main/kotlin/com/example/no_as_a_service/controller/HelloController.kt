@@ -10,4 +10,9 @@ class HelloController {
     fun hello(): HelloWorldDto {
         return HelloWorldDto("Hello World!", "Timo")
     }
+
+    @GetMapping("/test")
+    fun test(): HelloWorldDto {
+        return HelloWorldDto("Hello World (from test)!", "Timo")
+    }
 }
