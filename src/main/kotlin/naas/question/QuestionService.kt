@@ -20,7 +20,9 @@ class QuestionService(
     @Transactional
     fun process(question: QuestionEvent): QuestionEntity {
         val entity = question.toEntity()
-        return this.questionRepository.save(entity)
+        val savedEntity = this.questionRepository.save(entity)
+        println("✅ Successfully saved question: ${savedEntity.question}")
+        return savedEntity
     }
 
     fun findAll(): List<QuestionEntity> {
