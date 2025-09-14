@@ -1,0 +1,19 @@
+spring:
+  application:
+    .name: No as a Service
+  datasource:
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USERNAME}
+    password: ${POSTGRES_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # "create", "update", "validate", "none"
+    show-sql: true
+
+nats:
+  url: nats://nats.timowernars.nl:4222
+
+server:
+  port: 8000
